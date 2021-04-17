@@ -1,25 +1,20 @@
-<template>
-  <div id="app">
-    <div class="container">
-      <div class="row">
-        <div class="col">
-          <Chat />
-        </div>
-      </div>
-    </div>
-  </div>
+<template lang="pug">
+ #app
+    router-view
 </template>
 
 <script>
-import Chat from './views/Chat.vue';
 
 export default {
   name: 'app',
-  components: {
-    Chat,
-  },
 };
 </script>
 
 <style>
+#app {
+  font-family: 'Montserrat', sans-serif;
+  background: #000;
+  color: #fff;
+  height: 100vh;
+}
 </style>
