@@ -16,11 +16,6 @@ export default {
     'user',
     'color',
   ]),
-  watch: {
-    messages(val) {
-      console.log(val);
-    },
-  },
 };
 </script>
 

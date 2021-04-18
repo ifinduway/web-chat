@@ -30,9 +30,6 @@ export default {
       message: `user ${this.user.name} is connected!`,
     };
     this.socket.emit('SEND_MESSAGE', data);
-    window.onbeforeunload = () => {
-      this.socket.emit('kek', 'leave');
-    };
   },
 };
 </script>

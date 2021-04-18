@@ -15,7 +15,6 @@ export default {
       state.user.name = payload;
     },
     SET_CLR: (state, payload) => {
-      console.log(payload);
       state.user.color = payload;
     },
   },
