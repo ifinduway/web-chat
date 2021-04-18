@@ -1,7 +1,10 @@
 export default {
   namespaced: true,
   state: {
-    user: '',
+    user: {
+      name: '',
+      color: '',
+    },
     messages: [],
   },
   mutations: {
@@ -9,7 +12,11 @@ export default {
       state.messages = [...state.messages, payload];
     },
     SET_USER: (state, payload) => {
-      state.user = payload;
+      state.user.name = payload;
+    },
+    SET_CLR: (state, payload) => {
+      console.log(payload);
+      state.user.color = payload;
     },
   },
   getters: {
@@ -23,6 +30,9 @@ export default {
     },
     PUSH_USER({ commit }, payload) {
       commit('SET_USER', payload);
+    },
+    PUSH_CLR({ commit }, payload) {
+      commit('SET_CLR', payload);
     },
   },
 };

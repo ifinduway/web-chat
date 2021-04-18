@@ -5,12 +5,17 @@
         label.form-label(for="name") {{label}}
         input#name(v-model="name" type="text")
         button.btn-submit(@click.prevent="handleAuth" type="submit")
+        ColorSelector(:colors="['red','green','yellow']")
 </template>
 
 <script>
 import { mapActions } from 'vuex';
+import ColorSelector from './ColorSelector.vue';
 
 export default {
+  components: {
+    ColorSelector,
+  },
   props: {
     label: {
       type: String,
@@ -27,6 +32,7 @@ export default {
   methods: {
     ...mapActions('chat', {
       pushUser: 'PUSH_USER',
+      pushMessage: 'PUSH_MSG',
     }),
 
     handleAuth() {
@@ -82,8 +88,8 @@ label {
     border: none;
     outline: none;
     position: absolute;
-    bottom: 100px;
-    right: 0;
+    bottom: 130px;
+    right: 20px;
   }
 }
 </style>

@@ -22,7 +22,8 @@ export default {
       pushMessage: 'PUSH_MSG',
     }),
     sendMessage() {
-      if (this.message && this.user) {
+      if (this.message && this.user.name) {
+        console.log(this.message, this.user.name);
         const data = {
           user: this.user,
           message: this.message,

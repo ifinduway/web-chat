@@ -6,6 +6,7 @@
 
 <script>
 import io from 'socket.io-client';
+import { mapState } from 'vuex';
 import ListMessages from '../components/Chat/ListMessages.vue';
 import SendMessage from '../components/Chat/SendMessage.vue';
 
@@ -18,6 +19,19 @@ export default {
     return {
       message: '',
       socket: io('localhost:3001'),
+    };
+  },
+  computed: mapState('chat', {
+    user: 'user',
+  }),
+  mounted() {
+    const data = {
+      user: null,
+      message: `user ${this.user.name} is connected!`,
+    };
+    this.socket.emit('SEND_MESSAGE', data);
+    window.onbeforeunload = () => {
+      this.socket.emit('kek', 'leave');
     };
   },
 };

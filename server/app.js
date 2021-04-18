@@ -15,11 +15,15 @@ const io = require('socket.io')(server, {
 });
 
 io.on('connection', function(socket) {
-    socket.on('SEND_MESSAGE', function(data) {
-      console.log(data)
-      io.emit('MESSAGE', data)
-    });
-    socket.on('disconnect', (data) => {
-      console.log(data)
-    })
+  socket.on('SEND_MESSAGE', function(data) {
+    console.log(data)
+    io.emit('MESSAGE', data)
+  });
+  socket.on('NEW_USER', function(data) {
+    console.log(data)
+    io.emit('CONNECT_USER', data)
+  });
+  socket.on('connect', (data) => {
+    console.log(data)
+  })
 });

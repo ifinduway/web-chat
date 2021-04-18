@@ -1,7 +1,9 @@
 <template lang="pug">
   #list-messages
     .messages(v-for="(msg, index) in messages")
-      span {{msg.user}}: {{msg.message}}
+      span.d-flex
+        .name.mr-2(v-if="msg.user" :style="{color: msg.user.color}") {{msg.user.name}}:
+        .message {{msg.message}}
 </template>
 
 <script>
@@ -12,7 +14,13 @@ export default {
   computed: mapState('chat', [
     'messages',
     'user',
+    'color',
   ]),
+  watch: {
+    messages(val) {
+      console.log(val);
+    },
+  },
 };
 </script>
 
