@@ -2,10 +2,10 @@
   .container-fluid.d-flex.justify-content-center.align-items-center
     form#auth
         .mb-3
-        label.form-label(for="name") {{label}}
+        label.form-label(for="name") What's your name?
         input#name(v-model="name" type="text")
         button.btn-submit(@click.prevent="handleAuth" type="submit")
-        ColorSelector(:colors="['red','green','yellow']")
+        ColorSelector(:colors="['red','green','yellow', 'purple', '#57c9f2']")
 </template>
 
 <script>

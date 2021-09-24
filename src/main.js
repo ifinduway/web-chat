@@ -8,14 +8,16 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './assets/base.css';
 import store from './store';
 import router from './router';
+import i18n from './i18n';
 
 Vue.config.productionTip = false;
 Vue.use(VueRouter);
 Vue.use(Vuex);
+Vue.use(socket);
 
 new Vue({
   store,
   router,
-  socket,
+  i18n,
   render: (h) => h(App),
 }).$mount('#app');

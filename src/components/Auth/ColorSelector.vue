@@ -2,7 +2,8 @@
   .color-picker.d-flex.justify-content-center.mt-3
     .color(v-for="(item, index) in colors"
           :key="item"
-          :class="[activeColor === index ? 'active' : '', item]"
+          :class="{'active': (activeColor === index)}"
+          :style="{background: item}"
           @click="handleColor(item, index)")
 </template>
 
@@ -47,17 +48,7 @@ export default {
     margin: 0 10px;
     cursor: pointer;
   }
-  .red {
-    background: red;
-  }
-  .green {
-    background: green;
-  }
-  .yellow {
-    background: yellow;
-  }
-
-  .active {
+    .active {
     border: 4px solid #fff;
   }
 </style>
