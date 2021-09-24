@@ -32,7 +32,6 @@ export default {
   methods: {
     ...mapActions('chat', {
       pushUser: 'PUSH_USER',
-      pushMessage: 'PUSH_MSG',
     }),
 
     handleAuth() {

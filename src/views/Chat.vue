@@ -1,11 +1,10 @@
 <template lang="pug">
 #chat.container-fluid.d-flex.flex-column.align-items-center
-  ListMessages(:socket="socket")
-  SendMessage(:socket="socket")
+  list-messages
+  send-message(v-if="user")
 </template>
 
 <script>
-import io from 'socket.io-client';
 import { mapState } from 'vuex';
 import ListMessages from '../components/Chat/ListMessages.vue';
 import SendMessage from '../components/Chat/SendMessage.vue';
@@ -18,18 +17,15 @@ export default {
   data() {
     return {
       message: '',
-      socket: io('localhost:3001'),
     };
   },
-  computed: mapState('chat', {
-    user: 'user',
-  }),
+  computed: mapState('chat', ['user']),
   mounted() {
     const data = {
       user: null,
       message: `user ${this.user.name} is connected!`,
     };
-    this.socket.emit('SEND_MESSAGE', data);
+    this.$sendMessage(data);
   },
 };
 </script>

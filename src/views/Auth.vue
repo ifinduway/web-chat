@@ -1,5 +1,5 @@
 <template lang="pug">
-  AuthForm(:label="`What's your name?`")
+  auth-form(:label="`What's your name?`")
 </template>
 
 <script>

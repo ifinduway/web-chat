@@ -10,7 +10,6 @@
 import { mapState } from 'vuex';
 
 export default {
-  props: ['socket'],
   computed: mapState('chat', [
     'messages',
     'user',

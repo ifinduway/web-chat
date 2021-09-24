@@ -27,13 +27,13 @@ export default {
           user: this.user,
           message: this.message,
         };
-        this.socket.emit('SEND_MESSAGE', data);
+        this.$sendMessage(data);
         this.message = '';
       }
     },
   },
   mounted() {
-    this.socket.on('MESSAGE', (data) => {
+    this.$socket.on('MESSAGE', (data) => {
       this.pushMessage(data);
     });
   },

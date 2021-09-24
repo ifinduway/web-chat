@@ -16,7 +16,9 @@ export default {
       default: () => ['red'],
     },
   },
-
+  mounted() {
+    this.handleColor(this.colors[0], 0);
+  },
   data() {
     return {
       activeColor: null,
