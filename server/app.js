@@ -8,7 +8,7 @@ const server = app.listen(3001, () => {
 
 const io = require('socket.io')(server, {
   cors: {
-    origin: 'http://localhost:8080',
+    origin: 'https://webchat-y4ou.onrender.com',
     methods: ['GET', 'POST'],
   },
 });

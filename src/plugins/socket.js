@@ -2,7 +2,7 @@
 import io from 'socket.io-client';
 import { mapState } from 'vuex';
 
-const socket = io('https://backend-webchat.onrender.com/');
+const socket = io('http://localhost:3001');
 
 export default {
   install(Vue) {
